@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+  <div class="row">
+   <div class="col-md-8 offset-md-2">
+    <form method="POST">
+      {% csrf_token %}
+      <p class="lead">Are you sure to delete this task??</p>
+      <input type="submit">
+    </form>
+  </div>
+  </div>
+</div>
+{% endblock %}

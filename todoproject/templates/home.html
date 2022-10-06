@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+       <h3>ToDo Application</h3>
+        <p class="text-right"><a href="{%url 'todoapp:add' %}">Add Task</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

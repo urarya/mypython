@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <div class="banner">
+                <div class="banner-text">
+                    TODO Application
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="card text-white bg-info mb-3 shadow" >
+              <div class="card-body">
+                <h5 class="card-title">{{ task.title}}</h5>
+                <p class="card-text">{{task.priority}}</p>
+                  <p class="card-text">{{task.date}}</p>
+                <a href="{% url 'todoapp:delete' task.id %}" class="btn btn-danger">DONE</a>
+                  <a href="{% url 'todoapp:update' task.id %}" class="btn btn-warning">EDIT</a>
+              </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

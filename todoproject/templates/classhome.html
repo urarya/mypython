@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 mb-5">
+            <div class="banner">
+                <div class="banner-text">
+                    TODO Application
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            {%for i in tasks %}
+            <div class="card text-white bg-info mb-3 shadow" >
+              <div class="card-body">
+                <h5 class="card-title">{{ i.title}}</h5>
+                <p class="card-text">{{i.priority}}</p>
+                  <p class="card-text">{{i.date}}</p>
+                <a href="{% url 'todoapp:delete' i.id %}" class="btn btn-danger">DONE</a>
+                  <a href="{% url 'todoapp:update' i.id %}" class="btn btn-warning">EDIT</a>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
